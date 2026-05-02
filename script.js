@@ -339,6 +339,22 @@ function initFeaturedProducts() {
   renderProducts(grid, featured);
 }
 
+// ===== Dynamic Category Counts =====
+function updateCategoryCounts() {
+  const products = getProducts();
+  const counts = {
+    'scrubs-women':   products.filter(p => p.category === 'scrubs'    && p.sub === 'women').length,
+    'scrubs-men':     products.filter(p => p.category === 'scrubs'    && p.sub === 'men').length,
+    'labcoats-women': products.filter(p => p.category === 'Lab Coats' && p.sub === 'women').length,
+    'labcoats-men':   products.filter(p => p.category === 'Lab Coats' && p.sub === 'men').length,
+  };
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const key = el.dataset.count;
+    const n = counts[key] || 0;
+    el.textContent = n + (n === 1 ? ' Product' : ' Products');
+  });
+}
+
 // ===== Navigation =====
 function initNav() {
   const navbar = $('.navbar');
@@ -750,6 +766,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   // Seed products on first visit (for storefront pages)
   getProducts();
+  updateCategoryCounts();
   if ($('.hero')) { initFeaturedProducts(); }
   if ($('[data-category="scrubs"]')) { initCategoryPage('scrubs'); }
   if ($('[data-category="Lab Coats"]')) { initCategoryPage('Lab Coats'); }

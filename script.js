@@ -1,3 +1,5 @@
+const CURRENCY = 'EGP';
+function formatPrice(n) { return n.toFixed(2) + ' ' + CURRENCY; }
 // ===== Default Products (seeded on first load) =====
 const DEFAULT_PRODUCTS = [
   { id: 1, name: "Classic V-Neck Top", category: "scrubs", sub: "women", price: 45, image: "https://picsum.photos/seed/ws1/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#8B4513"], sizes: ["XS","S","M","L","XL","XXL"], badge: "Best Seller", desc: "Timeless V-neck design with side slits for effortless movement." },
@@ -16,18 +18,18 @@ const DEFAULT_PRODUCTS = [
   { id: 14, name: "Modern Jogger Pants", category: "scrubs", sub: "men", price: 44, image: "https://picsum.photos/seed/ms6/400/530.jpg", colors: ["#1A1A1A","#2D6A4F","#556B2F"], sizes: ["S","M","L","XL","XXL"], badge: "Best Seller", desc: "Sleek jogger silhouette with professional appeal." },
   { id: 15, name: "Cargo Pocket Pants", category: "scrubs", sub: "men", price: 46, image: "https://picsum.photos/seed/ms7/400/530.jpg", colors: ["#4A4A4A","#2D6A4F","#1A1A1A"], sizes: ["S","M","L","XL","XXL","3XL"], badge: "", desc: "Rugged cargo pants designed for demanding shifts." },
   { id: 16, name: "Tall Fit Straight Pants", category: "scrubs", sub: "men", price: 42, image: "https://picsum.photos/seed/ms8/400/530.jpg", colors: ["#2D6A4F","#1A1A1A"], sizes: ["M","L","XL","XXL","3XL"], badge: "New", desc: "Extended length for taller frames, same great comfort." },
-  { id: 17, name: "Classic Kimono Robe", category: "bathrobes", sub: "women", price: 65, image: "https://picsum.photos/seed/wb1/400/530.jpg", colors: ["#F5F0E8","#E8DDD0","#D4C5B2"], sizes: ["S","M","L","XL"], badge: "Best Seller", desc: "Lightweight kimono style with an inner tie for secure closure." },
-  { id: 18, name: "Luxury Shawl Collar", category: "bathrobes", sub: "women", price: 75, image: "https://picsum.photos/seed/wb2/400/530.jpg", colors: ["#F5F0E8","#2D6A4F","#1A1A1A"], sizes: ["S","M","L","XL"], badge: "Premium", desc: "Plush shawl collar robe with deep pockets and belt loops." },
-  { id: 19, name: "Lightweight Waffle", category: "bathrobes", sub: "women", price: 55, image: "https://picsum.photos/seed/wb3/400/530.jpg", colors: ["#F5F0E8","#B8D4E3","#D4C5B2"], sizes: ["XS","S","M","L","XL"], badge: "", desc: "Breathable waffle weave perfect for warmer climates." },
-  { id: 20, name: "Spa Style Robe", category: "bathrobes", sub: "women", price: 60, image: "https://picsum.photos/seed/wb4/400/530.jpg", colors: ["#F5F0E8","#E8DDD0"], sizes: ["S","M","L","XL"], badge: "Popular", desc: "Professional spa-grade robe with snap closure option." },
-  { id: 21, name: "Hooded Bathrobe", category: "bathrobes", sub: "women", price: 70, image: "https://picsum.photos/seed/wb5/400/530.jpg", colors: ["#F5F0E8","#B8D4E3","#E8DDD0"], sizes: ["S","M","L","XL"], badge: "New", desc: "Cozy hooded design for extra warmth after a shower." },
-  { id: 22, name: "Long Turkish Robe", category: "bathrobes", sub: "women", price: 80, image: "https://picsum.photos/seed/wb6/400/530.jpg", colors: ["#F5F0E8","#2D6A4F"], sizes: ["S","M","L","XL"], badge: "Premium", desc: "Premium Turkish cotton with exceptional absorbency." },
-  { id: 23, name: "Classic Kimono Robe", category: "bathrobes", sub: "men", price: 65, image: "https://picsum.photos/seed/mb1/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#4A4A4A"], sizes: ["M","L","XL","XXL"], badge: "Best Seller", desc: "Timeless kimono cut in durable, quick-dry fabric." },
-  { id: 24, name: "Luxury Shawl Collar", category: "bathrobes", sub: "men", price: 75, image: "https://picsum.photos/seed/mb2/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#556B2F"], sizes: ["M","L","XL","XXL"], badge: "Premium", desc: "Hotel-quality shawl collar with premium cotton construction." },
-  { id: 25, name: "Lightweight Waffle", category: "bathrobes", sub: "men", price: 55, image: "https://picsum.photos/seed/mb3/400/530.jpg", colors: ["#F5F0E8","#2D6A4F","#4A4A4A"], sizes: ["M","L","XL","XXL"], badge: "", desc: "Light and breathable waffle weave for everyday comfort." },
-  { id: 26, name: "Spa Style Robe", category: "bathrobes", sub: "men", price: 60, image: "https://picsum.photos/seed/mb4/400/530.jpg", colors: ["#F5F0E8","#1A1A1A"], sizes: ["M","L","XL","XXL"], badge: "Popular", desc: "Clean-lined spa robe used by professionals worldwide." },
-  { id: 27, name: "Hooded Bathrobe", category: "bathrobes", sub: "men", price: 70, image: "https://picsum.photos/seed/mb5/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#4A4A4A"], sizes: ["M","L","XL","XXL"], badge: "New", desc: "Functional hood with deep side pockets for utility." },
-  { id: 28, name: "Long Turkish Robe", category: "bathrobes", sub: "men", price: 80, image: "https://picsum.photos/seed/mb6/400/530.jpg", colors: ["#F5F0E8","#2D6A4F","#1A1A1A"], sizes: ["M","L","XL","XXL"], badge: "Premium", desc: "Extra-long Turkish cotton robe with superior softness." },
+  { id: 17, name: "Classic Kimono Robe", category: "Lab Coats", sub: "women", price: 65, image: "https://picsum.photos/seed/wb1/400/530.jpg", colors: ["#F5F0E8","#E8DDD0","#D4C5B2"], sizes: ["S","M","L","XL"], badge: "Best Seller", desc: "Lightweight kimono style with an inner tie for secure closure." },
+  { id: 18, name: "Luxury Shawl Collar", category: "Lab Coats", sub: "women", price: 75, image: "https://picsum.photos/seed/wb2/400/530.jpg", colors: ["#F5F0E8","#2D6A4F","#1A1A1A"], sizes: ["S","M","L","XL"], badge: "Premium", desc: "Plush shawl collar robe with deep pockets and belt loops." },
+  { id: 19, name: "Lightweight Waffle", category: "Lab Coats", sub: "women", price: 55, image: "https://picsum.photos/seed/wb3/400/530.jpg", colors: ["#F5F0E8","#B8D4E3","#D4C5B2"], sizes: ["XS","S","M","L","XL"], badge: "", desc: "Breathable waffle weave perfect for warmer climates." },
+  { id: 20, name: "Spa Style Robe", category: "Lab Coats", sub: "women", price: 60, image: "https://picsum.photos/seed/wb4/400/530.jpg", colors: ["#F5F0E8","#E8DDD0"], sizes: ["S","M","L","XL"], badge: "Popular", desc: "Professional spa-grade robe with snap closure option." },
+  { id: 21, name: "Hooded Bathrobe", category: "Lab Coats", sub: "women", price: 70, image: "https://picsum.photos/seed/wb5/400/530.jpg", colors: ["#F5F0E8","#B8D4E3","#E8DDD0"], sizes: ["S","M","L","XL"], badge: "New", desc: "Cozy hooded design for extra warmth after a shower." },
+  { id: 22, name: "Long Turkish Robe", category: "Lab Coats", sub: "women", price: 80, image: "https://picsum.photos/seed/wb6/400/530.jpg", colors: ["#F5F0E8","#2D6A4F"], sizes: ["S","M","L","XL"], badge: "Premium", desc: "Premium Turkish cotton with exceptional absorbency." },
+  { id: 23, name: "Classic Kimono Robe", category: "Lab Coats", sub: "men", price: 65, image: "https://picsum.photos/seed/mb1/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#4A4A4A"], sizes: ["M","L","XL","XXL"], badge: "Best Seller", desc: "Timeless kimono cut in durable, quick-dry fabric." },
+  { id: 24, name: "Luxury Shawl Collar", category: "Lab Coats", sub: "men", price: 75, image: "https://picsum.photos/seed/mb2/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#556B2F"], sizes: ["M","L","XL","XXL"], badge: "Premium", desc: "Hotel-quality shawl collar with premium cotton construction." },
+  { id: 25, name: "Lightweight Waffle", category: "Lab Coats", sub: "men", price: 55, image: "https://picsum.photos/seed/mb3/400/530.jpg", colors: ["#F5F0E8","#2D6A4F","#4A4A4A"], sizes: ["M","L","XL","XXL"], badge: "", desc: "Light and breathable waffle weave for everyday comfort." },
+  { id: 26, name: "Spa Style Robe", category: "Lab Coats", sub: "men", price: 60, image: "https://picsum.photos/seed/mb4/400/530.jpg", colors: ["#F5F0E8","#1A1A1A"], sizes: ["M","L","XL","XXL"], badge: "Popular", desc: "Clean-lined spa robe used by professionals worldwide." },
+  { id: 27, name: "Hooded Bathrobe", category: "Lab Coats", sub: "men", price: 70, image: "https://picsum.photos/seed/mb5/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#4A4A4A"], sizes: ["M","L","XL","XXL"], badge: "New", desc: "Functional hood with deep side pockets for utility." },
+  { id: 28, name: "Long Turkish Robe", category: "Lab Coats", sub: "men", price: 80, image: "https://picsum.photos/seed/mb6/400/530.jpg", colors: ["#F5F0E8","#2D6A4F","#1A1A1A"], sizes: ["M","L","XL","XXL"], badge: "Premium", desc: "Extra-long Turkish cotton robe with superior softness." },
 ];
 
 // ===== Products Data Layer =====
@@ -199,13 +201,13 @@ function renderCart() {
             <span>${item.qty}</span>
             <button onclick="updateQty('${item.key}', 1)">&plus;</button>
           </div>
-          <div class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</div>
+          <div class="cart-item-price">${formatPrice(item.price * item.qty)}</div>
         </div>
         <button class="cart-item-remove" onclick="removeFromCart('${item.key}')">Remove</button>
       </div>
     </div>
   `).join('');
-  totalEl.textContent = `$${getCartTotal().toFixed(2)}`;
+  totalEl.textContent = `${formatPrice(getCartTotal())}`;
 }
 
 // ===== Cart Sidebar Toggle =====
@@ -230,8 +232,8 @@ function openOrderModal() {
     const summaryBox = $('.order-summary-box');
     summaryBox.innerHTML = `
       <h4>Order Summary (${cart.reduce((s,i)=>s+i.qty,0)} items)</h4>
-      ${cart.map(i => `<div class="order-summary-item"><span>${i.name} (${i.size}) x${i.qty}</span><span>$${(i.price*i.qty).toFixed(2)}</span></div>`).join('')}
-      <div class="order-summary-total"><span>Total</span><span>$${getCartTotal().toFixed(2)}</span></div>
+      ${cart.map(i => `<div class="order-summary-item"><span>${i.name} (${i.size}) x${i.qty}</span><span>${formatPrice(i.price*i.qty)}</span></div>`).join('')}
+      <div class="order-summary-total"><span>Total</span><span>${formatPrice(getCartTotal())}</span></div>
     `;
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -296,13 +298,13 @@ function renderProducts(container, items) {
         </div>
       </div>
       <div class="product-card-info">
-        <div class="product-card-category">${p.sub === 'women' ? "Women's" : "Men's"} ${p.category === 'scrubs' ? 'Scrubs' : 'Bathrobes'}</div>
+        <div class="product-card-category">${p.sub === 'women' ? "Women's" : "Men's"} ${p.category === 'scrubs' ? 'Scrubs' : 'Lab Coats'}</div>
         <div class="product-card-name">${p.name}</div>
         <div class="product-card-colors">
           ${p.colors.map(c => `<span class="color-dot" style="background:${c}"></span>`).join('')}
         </div>
         <div class="product-card-bottom">
-          <div class="product-card-price">$${p.price.toFixed(2)}</div>
+          <div class="product-card-price">${formatPrice(p.price)}</div>
         </div>
       </div>
     </div>
@@ -459,7 +461,7 @@ function renderAdminStats() {
   setVal('#stat-total', orders.length);
   setVal('#stat-pending', pending);
   setVal('#stat-completed', completed);
-  setVal('#stat-revenue', '$' + revenue.toFixed(2));
+  setVal('#stat-revenue', formatPrice(revenue));
   setVal('#stat-products', products.length);
 }
 
@@ -476,7 +478,7 @@ function renderAdminOrders() {
       <td><strong>${order.id}</strong></td>
       <td>${order.customer.name}<br><small style="color:var(--text-muted)">${order.customer.phone}</small></td>
       <td>${order.items.length} item(s)</td>
-      <td><strong>$${order.total.toFixed(2)}</strong></td>
+      <td><strong>${formatPrice(order.total)}</strong></td>
       <td><span class="status-badge ${order.status}">${order.status.charAt(0).toUpperCase() + order.status.slice(1)}</span></td>
       <td>
         <div style="display:flex;gap:8px;align-items:center;">
@@ -543,11 +545,11 @@ function viewOrderDetail(orderId) {
         ${order.items.map(item => `
           <div class="order-detail-item">
             <span>${item.name} (${item.size}) x${item.qty}</span>
-            <span>$${(item.price * item.qty).toFixed(2)}</span>
+            <span>${formatPrice(item.price * item.qty)}</span>
           </div>
         `).join('')}
         <div class="order-detail-item" style="border-top:2px solid var(--border);margin-top:8px;padding-top:12px;font-weight:700;">
-          <span>Total</span><span style="color:var(--primary-dark);font-size:1.05rem;">$${order.total.toFixed(2)}</span>
+          <span>Total</span><span style="color:var(--primary-dark);font-size:1.05rem;">${formatPrice(order.total)}</span>
         </div>
       </div>
     </div>
@@ -587,13 +589,13 @@ function renderAdminProducts() {
           </div>
           <div>
             <div style="font-weight:600;font-size:0.88rem;">${p.name}</div>
-            <div style="font-size:0.75rem;color:var(--text-muted);">${p.category === 'scrubs' ? 'Scrubs' : 'Bathrobes'} &middot; ${p.sub === 'women' ? "Women's" : "Men's"}</div>
+            <div style="font-size:0.75rem;color:var(--text-muted);">${p.category === 'scrubs' ? 'Scrubs' : 'Lab Coats'} &middot; ${p.sub === 'women' ? "Women's" : "Men's"}</div>
           </div>
         </div>
       </td>
-      <td style="font-size:0.85rem;">${p.category === 'scrubs' ? 'Scrubs' : 'Bathrobes'}</td>
+      <td style="font-size:0.85rem;">${p.category === 'scrubs' ? 'Scrubs' : 'Lab Coats'}</td>
       <td style="font-size:0.85rem;">${p.sub === 'women' ? "Women's" : "Men's"}</td>
-      <td><strong>$${p.price.toFixed(2)}</strong></td>
+      <td><strong>${formatPrice(p.price)}</strong></td>
       <td>
         <div style="display:flex;gap:4px;">
           ${p.colors.map(c => `<span style="width:18px;height:18px;border-radius:50%;background:${c};display:inline-block;border:1px solid var(--border);"></span>`).join('')}
@@ -750,6 +752,6 @@ document.addEventListener('DOMContentLoaded', () => {
   getProducts();
   if ($('.hero')) { initFeaturedProducts(); }
   if ($('[data-category="scrubs"]')) { initCategoryPage('scrubs'); }
-  if ($('[data-category="bathrobes"]')) { initCategoryPage('bathrobes'); }
+  if ($('[data-category="Lab Coats"]')) { initCategoryPage('Lab Coats'); }
   if ($('.admin-page')) { initAdminGate(); }
 });

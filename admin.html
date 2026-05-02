@@ -104,6 +104,8 @@
     .btn-add-product:hover { background: var(--primary-light); transform: translateY(-1px); }
     .admin-logout-btn { background: rgba(239,68,68,0.1) !important; color: #EF4444 !important; }
     .admin-logout-btn:hover { background: #EF4444 !important; color: #fff !important; }
+    .admin-pw-btn { background: rgba(212,168,83,0.15) !important; color: #D4A853 !important; }
+    .admin-pw-btn:hover { background: #D4A853 !important; color: #fff !important; }
 
     /* ===== Image Upload Zone ===== */
     .upload-zone {
@@ -121,123 +123,46 @@
       border-color: var(--primary);
       background: rgba(45,106,79,0.04);
     }
-    .upload-zone.dragover {
-      transform: scale(1.01);
-    }
-    .upload-zone-icon {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-      opacity: 0.35;
-      display: block;
-    }
-    .upload-zone-text {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-    .upload-zone-text strong {
-      color: var(--primary);
-      font-weight: 600;
-    }
-    .upload-zone-hint {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      opacity: 0.7;
-    }
-    .upload-zone input[type="file"] {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      cursor: pointer;
-    }
+    .upload-zone.dragover { transform: scale(1.01); }
+    .upload-zone-icon { font-size: 2.2rem; margin-bottom: 10px; opacity: 0.35; display: block; }
+    .upload-zone-text { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 6px; }
+    .upload-zone-text strong { color: var(--primary); font-weight: 600; }
+    .upload-zone-hint { font-size: 0.75rem; color: var(--text-muted); opacity: 0.7; }
+    .upload-zone input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
     .upload-preview {
-      position: relative;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      display: none;
-      background: var(--bg-warm);
+      position: relative; border-radius: var(--radius-md); overflow: hidden;
+      display: none; background: var(--bg-warm);
     }
     .upload-preview.visible { display: block; }
-    .upload-preview img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-    }
+    .upload-preview img { width: 100%; height: 220px; object-fit: cover; display: block; }
     .upload-preview-remove {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(4px);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s ease;
+      position: absolute; top: 10px; right: 10px; width: 34px; height: 34px;
+      border-radius: 50%; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; border: none; cursor: pointer; transition: background 0.2s ease;
     }
     .upload-preview-remove:hover { background: rgba(239,68,68,0.9); }
     .upload-preview-info {
-      padding: 10px 14px;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      background: var(--bg);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 10px 14px; font-size: 0.78rem; color: var(--text-muted);
+      background: var(--bg); display: flex; justify-content: space-between; align-items: center;
     }
     .or-divider {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 14px 0;
-      font-size: 0.78rem;
-      color: var(--text-muted);
+      display: flex; align-items: center; gap: 12px; margin: 14px 0;
+      font-size: 0.78rem; color: var(--text-muted);
     }
-    .or-divider::before,
-    .or-divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-    .url-input-row {
-      display: flex;
-      gap: 8px;
-    }
+    .or-divider::before, .or-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .url-input-row { display: flex; gap: 8px; }
     .url-input-row input {
-      flex: 1;
-      padding: 10px 14px;
-      border: 2px solid var(--border);
-      border-radius: 8px;
-      font-size: 0.82rem;
-      outline: none;
-      background: var(--bg);
-      transition: border-color 0.2s ease;
+      flex: 1; padding: 10px 14px; border: 2px solid var(--border); border-radius: 8px;
+      font-size: 0.82rem; outline: none; background: var(--bg); transition: border-color 0.2s ease;
     }
     .url-input-row input:focus { border-color: var(--primary); }
     .url-input-row button {
-      padding: 10px 16px;
-      background: var(--bg);
-      border: 2px solid var(--border);
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s ease;
+      padding: 10px 16px; background: var(--bg); border: 2px solid var(--border);
+      border-radius: 8px; font-size: 0.8rem; font-weight: 600; color: var(--text-muted);
+      cursor: pointer; white-space: nowrap; transition: all 0.2s ease;
     }
-    .url-input-row button:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
+    .url-input-row button:hover { border-color: var(--primary); color: var(--primary); }
 
     /* Product form */
     .product-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -253,15 +178,33 @@
       border-color: var(--primary); background: rgba(45,106,79,0.08); color: var(--primary);
     }
     .size-checkboxes input { display: none; }
-    .colors-section-label {
-      font-size: 0.8rem; font-weight: 600; color: var(--text-light); margin-bottom: 8px;
-    }
+    .colors-section-label { font-size: 0.8rem; font-weight: 600; color: var(--text-light); margin-bottom: 8px; }
     .add-color-btn {
       background: var(--bg); border: 2px dashed var(--border); border-radius: 8px;
       padding: 8px 16px; font-size: 0.8rem; font-weight: 500; color: var(--text-muted);
       cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 4px;
     }
     .add-color-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* Password Modal */
+    .pw-form-group { margin-bottom: 16px; }
+    .pw-form-group label {
+      display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-light); margin-bottom: 6px;
+    }
+    .pw-form-group input {
+      width: 100%; padding: 12px 14px; border: 2px solid var(--border); border-radius: 8px;
+      font-size: 0.9rem; outline: none; background: var(--bg); text-align: center;
+      letter-spacing: 1px; transition: border-color 0.2s ease;
+    }
+    .pw-form-group input:focus { border-color: var(--primary); }
+    #pw-error {
+      display: none; background: #FEF2F2; color: #991B1B; font-size: 0.82rem;
+      padding: 10px 14px; border-radius: 8px; border: 1px solid #FECACA;
+    }
+    #pw-success {
+      display: none; background: #F0FDF4; color: #166534; font-size: 0.82rem;
+      padding: 10px 14px; border-radius: 8px; border: 1px solid #BBF7D0;
+    }
 
     @media (max-width: 768px) {
       .admin-nav { padding: 14px 16px; flex-wrap: wrap; gap: 10px; }
@@ -312,6 +255,7 @@
       </div>
       <div class="admin-nav-actions">
         <a href="index.html" class="btn btn-sm" style="background:rgba(255,255,255,0.15);color:#fff;">View Store</a>
+        <button class="btn btn-sm admin-pw-btn" onclick="openPasswordModal()">&#9881; Password</button>
         <button class="btn btn-sm admin-logout-btn" onclick="adminLogout()">Logout</button>
       </div>
     </header>
@@ -423,7 +367,7 @@
             </div>
 
             <div class="form-group">
-              <label>Price ($) *</label>
+              <label>Price (${typeof CURRENCY !== 'undefined' ? CURRENCY : 'EGP'}) *</label>
               <input type="number" name="price" placeholder="45.00" step="0.01" min="0" required>
             </div>
 
@@ -431,7 +375,7 @@
               <label>Category</label>
               <select name="category" style="width:100%;padding:10px 14px;border:2px solid var(--border);border-radius:8px;font-size:0.88rem;background:var(--bg);outline:none;">
                 <option value="scrubs">Scrubs</option>
-                <option value="bathrobes">Bathrobes</option>
+                <option value="Lab Coats">Lab Coats</option>
               </select>
             </div>
 
@@ -447,17 +391,13 @@
             <div class="form-group full">
               <label>Product Image</label>
 
-              <!-- Upload Zone -->
               <div class="upload-zone" id="upload-zone">
                 <input type="file" accept="image/*" id="image-file-input">
                 <span class="upload-zone-icon">&#128247;</span>
-                <div class="upload-zone-text">
-                  <strong>Click to upload</strong> or drag & drop
-                </div>
-                <div class="upload-zone-hint">JPG, PNG, WebP — Max 2MB (auto-compressed)</div>
+                <div class="upload-zone-text"><strong>Click to upload</strong> or drag & drop</div>
+                <div class="upload-zone-hint">JPG, PNG, WebP — auto-compressed to ~500px</div>
               </div>
 
-              <!-- Preview after upload -->
               <div class="upload-preview" id="upload-preview">
                 <img id="upload-preview-img" src="" alt="Preview">
                 <button type="button" class="upload-preview-remove" onclick="removeUploadedImage()">&times;</button>
@@ -467,16 +407,13 @@
                 </div>
               </div>
 
-              <!-- OR divider -->
               <div class="or-divider">or use image URL</div>
 
-              <!-- URL input -->
               <div class="url-input-row">
                 <input type="text" id="image-url-input" placeholder="https://example.com/image.jpg">
                 <button type="button" onclick="useImageUrl()">Use URL</button>
               </div>
 
-              <!-- Hidden field to store final image value -->
               <input type="hidden" name="image" id="final-image-value" value="">
             </div>
 
@@ -530,207 +467,404 @@
 
   <script src="script.js"></script>
   <script>
-    // ===== Image Upload Logic =====
+    // ===== References (captured ONCE — never clone the form!) =====
     let currentBase64Image = '';
-    const MAX_IMAGE_SIZE = 800; // max width/height in pixels
-    const JPEG_QUALITY = 0.75;
+    const MAX_IMAGE_SIZE = 500;
+    const JPEG_QUALITY = 0.6;
 
-    const uploadZone = document.getElementById('upload-zone');
-    const fileInput = document.getElementById('image-file-input');
-    const uploadPreview = document.getElementById('upload-preview');
-    const uploadPreviewImg = document.getElementById('upload-preview-img');
-    const uploadFileName = document.getElementById('upload-file-name');
-    const uploadFileSize = document.getElementById('upload-file-size');
-    const imageUrlInput = document.getElementById('image-url-input');
+    const uploadZone      = document.getElementById('upload-zone');
+    const fileInput       = document.getElementById('image-file-input');
+    const uploadPreview   = document.getElementById('upload-preview');
+    const uploadPreviewImg= document.getElementById('upload-preview-img');
+    const uploadFileName  = document.getElementById('upload-file-name');
+    const uploadFileSize  = document.getElementById('upload-file-size');
+    const imageUrlInput   = document.getElementById('image-url-input');
     const finalImageValue = document.getElementById('final-image-value');
 
-    // Drag & Drop
+    let _productMode  = 'add';
+    let _productEditId = null;
+
+    // ===== Admin Password (localStorage-based) =====
+    function getAdminPassword() {
+        return localStorage.getItem('sh_admin_password') || 'scrubly2025';
+    }
+    function setAdminPassword(newPass) {
+        localStorage.setItem('sh_admin_password', newPass);
+    }
+
+    // ===== Drag & Drop =====
     uploadZone.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      uploadZone.classList.add('dragover');
+        e.preventDefault();
+        uploadZone.classList.add('dragover');
     });
-    uploadZone.addEventListener('dragleave', () => {
-      uploadZone.classList.remove('dragover');
-    });
+    uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('dragover'));
     uploadZone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      uploadZone.classList.remove('dragover');
-      if (e.dataTransfer.files.length > 0) {
-        handleImageFile(e.dataTransfer.files[0]);
-      }
+        e.preventDefault();
+        uploadZone.classList.remove('dragover');
+        if (e.dataTransfer.files.length > 0) handleImageFile(e.dataTransfer.files[0]);
     });
-
-    // File input change
     fileInput.addEventListener('change', (e) => {
-      if (e.target.files.length > 0) {
-        handleImageFile(e.target.files[0]);
-      }
+        if (e.target.files.length > 0) handleImageFile(e.target.files[0]);
     });
 
-    // Compress & convert image to base64
+    // ===== Image Compression =====
     function handleImageFile(file) {
-      if (!file.type.startsWith('image/')) {
-        showToast('Please select an image file', 'error');
-        return;
-      }
+        if (!file.type.startsWith('image/')) {
+            showToast('Please select an image file', 'error');
+            return;
+        }
+        uploadFileName.textContent = file.name;
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const img = new Image();
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                let w = img.width, h = img.height;
+                if (w > MAX_IMAGE_SIZE || h > MAX_IMAGE_SIZE) {
+                    if (w > h) { h = Math.round((h * MAX_IMAGE_SIZE) / w); w = MAX_IMAGE_SIZE; }
+                    else { w = Math.round((w * MAX_IMAGE_SIZE) / h); h = MAX_IMAGE_SIZE; }
+                }
+                canvas.width = w; canvas.height = h;
+                canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+                currentBase64Image = canvas.toDataURL('image/jpeg', JPEG_QUALITY);
 
-      uploadFileName.textContent = file.name;
-
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        const img = new Image();
-        img.onload = function() {
-          // Compress
-          const canvas = document.createElement('canvas');
-          let w = img.width;
-          let h = img.height;
-
-          if (w > MAX_IMAGE_SIZE || h > MAX_IMAGE_SIZE) {
-            if (w > h) {
-              h = Math.round((h * MAX_IMAGE_SIZE) / w);
-              w = MAX_IMAGE_SIZE;
-            } else {
-              w = Math.round((w * MAX_IMAGE_SIZE) / h);
-              h = MAX_IMAGE_SIZE;
-            }
-          }
-
-          canvas.width = w;
-          canvas.height = h;
-          const ctx = canvas.getContext('2d');
-          ctx.drawImage(img, 0, 0, w, h);
-
-          currentBase64Image = canvas.toDataURL('image/jpeg', JPEG_QUALITY);
-
-          // Calculate approximate size
-          const sizeInKB = Math.round((currentBase64Image.length * 3) / 4 / 1024);
-          uploadFileSize.textContent = sizeInKB + ' KB';
-
-          // Show preview
-          uploadPreviewImg.src = currentBase64Image;
-          uploadPreview.classList.add('visible');
-          uploadZone.style.display = 'none';
-
-          // Set value
-          finalImageValue.value = currentBase64Image;
-          imageUrlInput.value = '';
+                const sizeInKB = Math.round((currentBase64Image.length * 3) / 4 / 1024);
+                uploadFileSize.textContent = sizeInKB + ' KB';
+                uploadPreviewImg.src = currentBase64Image;
+                uploadPreview.classList.add('visible');
+                uploadZone.style.display = 'none';
+                finalImageValue.value = currentBase64Image;
+                imageUrlInput.value = '';
+                console.log('Image uploaded:', sizeInKB + ' KB, value length:', finalImageValue.value.length);
+            };
+            img.src = e.target.result;
         };
-        img.src = e.target.result;
-      };
-      reader.readAsDataURL(file);
+        reader.readAsDataURL(file);
     }
 
-    // Remove uploaded image
     function removeUploadedImage() {
-      currentBase64Image = '';
-      finalImageValue.value = '';
-      uploadPreview.classList.remove('visible');
-      uploadZone.style.display = '';
-      fileInput.value = '';
-      uploadPreviewImg.src = '';
-    }
-
-    // Use URL instead
-    function useImageUrl() {
-      const url = imageUrlInput.value.trim();
-      if (!url) {
-        showToast('Please enter an image URL', 'error');
-        return;
-      }
-
-      // Test if URL is valid image
-      const testImg = new Image();
-      testImg.onload = function() {
         currentBase64Image = '';
-        finalImageValue.value = url;
-        uploadPreviewImg.src = url;
-        uploadFileName.textContent = 'External URL';
-        uploadFileSize.textContent = 'Linked';
-        uploadPreview.classList.add('visible');
-        uploadZone.style.display = 'none';
-        showToast('Image loaded from URL');
-      };
-      testImg.onerror = function() {
-        showToast('Could not load image from this URL', 'error');
-      };
-      testImg.src = url;
+        finalImageValue.value = '';
+        uploadPreview.classList.remove('visible');
+        uploadZone.style.display = '';
+        fileInput.value = '';
+        imageUrlInput.value = '';
+        uploadPreviewImg.src = '';
     }
 
-    // Reset image section when opening modal
-    const origOpenProductModal = openProductModal;
-    openProductModal = function(mode, productId) {
-      // Reset image state
-      currentBase64Image = '';
-      finalImageValue.value = '';
-      uploadPreview.classList.remove('visible');
-      uploadZone.style.display = '';
-      fileInput.value = '';
-      imageUrlInput.value = '';
-      uploadPreviewImg.src = '';
-
-      origOpenProductModal(mode, productId);
-
-      // If editing, load existing image
-      if (mode === 'edit') {
-        const product = getProductById(productId);
-        if (product && product.image) {
-          if (product.image.startsWith('data:')) {
-            // Base64 image
-            currentBase64Image = product.image;
-            finalImageValue.value = product.image;
-            uploadPreviewImg.src = product.image;
-            uploadFileName.textContent = 'Uploaded image';
-            const sizeInKB = Math.round((product.image.length * 3) / 4 / 1024);
-            uploadFileSize.textContent = sizeInKB + ' KB';
-            uploadPreview.classList.add('visible');
-            uploadZone.style.display = 'none';
-          } else {
-            // URL image
-            finalImageValue.value = product.image;
-            imageUrlInput.value = product.image;
-            uploadPreviewImg.src = product.image;
+    function useImageUrl() {
+        const url = imageUrlInput.value.trim();
+        if (!url) { showToast('Please enter an image URL', 'error'); return; }
+        const testImg = new Image();
+        testImg.onload = function() {
+            currentBase64Image = '';
+            finalImageValue.value = url;
+            uploadPreviewImg.src = url;
             uploadFileName.textContent = 'External URL';
             uploadFileSize.textContent = 'Linked';
             uploadPreview.classList.add('visible');
             uploadZone.style.display = 'none';
-          }
-        }
-      }
-    };
-
-    // Close modals on overlay click
-    document.querySelectorAll('.modal-overlay').forEach(overlay => {
-      overlay.addEventListener('click', function(e) {
-        if (e.target === this) {
-          this.classList.remove('open');
-          document.body.style.overflow = '';
-        }
-      });
-    });
-
-    // Logout
-    function adminLogout() {
-      sessionStorage.removeItem('sh_admin_auth');
-      document.getElementById('admin-dashboard').style.display = 'none';
-      document.getElementById('admin-gate').style.display = 'flex';
-      document.getElementById('admin-password').value = '';
-      document.getElementById('admin-login-error').style.display = 'none';
-      document.getElementById('admin-password').focus();
+            showToast('Image loaded from URL');
+        };
+        testImg.onerror = function() { showToast('Could not load image from this URL', 'error'); };
+        testImg.src = url;
     }
 
-    // Update counts
-    const origRenderProducts = renderAdminProducts;
-    renderAdminProducts = function() {
-      origRenderProducts();
-      const countEl = document.getElementById('products-count');
-      if (countEl) countEl.textContent = getProducts().length;
+    // ===== Override openProductModal =====
+    const _origOpenProductModal = openProductModal;
+    openProductModal = function(mode, productId) {
+        _productMode  = mode || 'add';
+        _productEditId = productId || null;
+
+        removeUploadedImage();
+        _origOpenProductModal(mode, productId);
+
+        if (_productMode === 'edit' && typeof getProductById === 'function') {
+            const product = getProductById(productId);
+            if (product && product.image) {
+                finalImageValue.value = product.image;
+                if (product.image.startsWith('data:')) {
+                    currentBase64Image = product.image;
+                    uploadFileName.textContent = 'Uploaded image';
+                    uploadFileSize.textContent = Math.round((product.image.length * 3) / 4 / 1024) + ' KB';
+                } else {
+                    imageUrlInput.value = product.image;
+                    uploadFileName.textContent = 'External URL';
+                    uploadFileSize.textContent = 'Linked';
+                }
+                uploadPreviewImg.src = product.image;
+                uploadPreview.classList.add('visible');
+                uploadZone.style.display = 'none';
+            }
+        }
     };
-    const origRenderOrders = renderAdminOrders;
+
+    // ===== Override closeProductModal =====
+    const _origCloseProductModal = closeProductModal;
+    closeProductModal = function() {
+        _origCloseProductModal();
+        removeUploadedImage();
+    };
+
+    // ===== Attach product form handler (NO cloning!) =====
+    setTimeout(function() {
+        const form = document.getElementById('product-form');
+        if (!form) { console.error('Product form not found!'); return; }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const nameVal     = form.querySelector('[name="name"]').value.trim();
+            const priceVal    = parseFloat(form.querySelector('[name="price"]').value);
+            const categoryVal = form.querySelector('[name="category"]').value;
+            const subVal      = form.querySelector('[name="sub"]').value;
+            let imageVal      = finalImageValue.value;
+            const badgeVal    = form.querySelector('[name="badge"]').value.trim();
+            const descVal     = form.querySelector('[name="desc"]').value.trim();
+
+            // Colors
+            const colorsContainer = document.getElementById('product-colors-container');
+            let colorsArr = [];
+            if (colorsContainer) {
+                colorsContainer.querySelectorAll('input[type="text"]').forEach(function(inp) {
+                    const v = inp.value.trim();
+                    if (v) colorsArr.push(v);
+                });
+            }
+
+            // Sizes
+            const sizesArr = [];
+            form.querySelectorAll('input[name="sizes"]:checked').forEach(function(cb) {
+                sizesArr.push(cb.value);
+            });
+
+            // Validate
+            if (!nameVal) { showToast('Product name is required', 'error'); form.querySelector('[name="name"]').focus(); return; }
+            if (isNaN(priceVal) || priceVal <= 0) { showToast('Enter a valid price', 'error'); form.querySelector('[name="price"]').focus(); return; }
+            if (sizesArr.length === 0) { showToast('Select at least one size', 'error'); return; }
+
+            // Default image
+            if (!imageVal) {
+                imageVal = 'https://images.unsplash.com/photo-1639322537228-f710d846310a?w=500&q=80';
+            }
+
+            // Read products
+            let products = [];
+            try { products = JSON.parse(localStorage.getItem('sh_products') || '[]'); } catch(err) { products = []; }
+
+            // Add or Edit
+            if (_productMode === 'edit' && _productEditId != null) {
+                let found = false;
+                for (let i = 0; i < products.length; i++) {
+                    if (String(products[i].id) === String(_productEditId)) {
+                        products[i].name     = nameVal;
+                        products[i].price    = priceVal;
+                        products[i].category = categoryVal;
+                        products[i].sub      = subVal;
+                        products[i].image    = imageVal;
+                        products[i].badge    = badgeVal;
+                        products[i].colors   = colorsArr;
+                        products[i].sizes    = sizesArr;
+                        products[i].desc     = descVal;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) { showToast('Product not found', 'error'); return; }
+            } else {
+                const maxId = products.reduce(function(max, p) { return Math.max(max, Number(p.id) || 0); }, 0);
+                products.push({
+                    id: maxId + 1,
+                    name: nameVal,
+                    price: priceVal,
+                    category: categoryVal,
+                    sub: subVal,
+                    image: imageVal,
+                    badge: badgeVal,
+                    colors: colorsArr,
+                    sizes: sizesArr,
+                    desc: descVal,
+                    featured: false
+                });
+            }
+
+            // Save
+            try {
+                localStorage.setItem('sh_products', JSON.stringify(products));
+            } catch(err) {
+                if (err.name === 'QuotaExceededError' || err.code === 22) {
+                    showToast('Storage full! Use image URLs instead of uploading files.', 'error');
+                } else {
+                    showToast('Save error: ' + err.message, 'error');
+                }
+                return;
+            }
+
+            // Verify
+            try {
+                var verify = JSON.parse(localStorage.getItem('sh_products') || '[]');
+                if (verify.length === products.length) {
+                    renderAdminProducts();
+                    renderAdminStats();
+                    closeProductModal();
+                    showToast(_productMode === 'edit' ? 'Product updated!' : 'Product added!');
+                    console.log('Saved. Total:', verify.length, 'Image length:', imageVal.length);
+                } else {
+                    showToast('Save mismatch error', 'error');
+                }
+            } catch(e) {
+                showToast('Verify error', 'error');
+            }
+        });
+
+    }, 300);
+
+    // ===== Override login form to use localStorage password =====
+    setTimeout(function() {
+        const loginForm = document.getElementById('admin-login-form');
+        if (!loginForm) return;
+
+        const newLoginForm = loginForm.cloneNode(true);
+        loginForm.parentNode.replaceChild(newLoginForm, loginForm);
+
+        const passInput = newLoginForm.querySelector('input[type="password"]');
+        const errorEl   = document.getElementById('admin-login-error');
+        const gate      = document.getElementById('admin-gate');
+        const dashboard = document.getElementById('admin-dashboard');
+
+        newLoginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (passInput.value === getAdminPassword()) {
+                sessionStorage.setItem('sh_admin_auth', 'true');
+                gate.style.display = 'none';
+                dashboard.style.display = 'block';
+                initAdmin();
+            } else {
+                errorEl.style.display = 'block';
+                passInput.value = '';
+                passInput.focus();
+                const card = gate.querySelector('.admin-login-card');
+                card.style.animation = 'none';
+                requestAnimationFrame(function() { card.style.animation = 'shake 0.5s ease'; });
+            }
+        });
+        passInput.focus();
+    }, 300);
+
+    // ===== Password Change Modal =====
+    function openPasswordModal() {
+        let modal = document.getElementById('password-modal');
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.id = 'password-modal';
+            modal.className = 'modal-overlay';
+            modal.innerHTML = `
+                <div class="modal" style="width:420px;" role="dialog" aria-label="Change password">
+                    <div class="modal-header">
+                        <h3>&#9881; Change Admin Password</h3>
+                        <button class="cart-close" onclick="closePasswordModal()" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="pw-error"></div>
+                        <div id="pw-success"></div>
+                        <div class="pw-form-group">
+                            <label>Current Password</label>
+                            <input type="password" id="pw-current" placeholder="Enter current password">
+                        </div>
+                        <div class="pw-form-group">
+                            <label>New Password</label>
+                            <input type="password" id="pw-new" placeholder="Enter new password">
+                        </div>
+                        <div class="pw-form-group">
+                            <label>Confirm New Password</label>
+                            <input type="password" id="pw-confirm" placeholder="Confirm new password">
+                        </div>
+                        <button type="button" class="btn btn-primary" style="width:100%;justify-content:center;" onclick="changePassword()">Update Password</button>
+                        <p style="text-align:center;font-size:0.75rem;color:var(--text-muted);margin-top:12px;">Default password: scrubly2025</p>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) closePasswordModal();
+            });
+        }
+        document.getElementById('pw-current').value = '';
+        document.getElementById('pw-new').value = '';
+        document.getElementById('pw-confirm').value = '';
+        document.getElementById('pw-error').style.display = 'none';
+        document.getElementById('pw-success').style.display = 'none';
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        setTimeout(function() { document.getElementById('pw-current').focus(); }, 100);
+    }
+
+    function closePasswordModal() {
+        const modal = document.getElementById('password-modal');
+        if (modal) { modal.classList.remove('open'); document.body.style.overflow = ''; }
+    }
+
+    function changePassword() {
+        const current = document.getElementById('pw-current').value;
+        const newPw   = document.getElementById('pw-new').value;
+        const confirm = document.getElementById('pw-confirm').value;
+        const errEl   = document.getElementById('pw-error');
+        const sucEl   = document.getElementById('pw-success');
+
+        errEl.style.display = 'none';
+        sucEl.style.display = 'none';
+
+        if (!current) { errEl.textContent = 'Enter your current password'; errEl.style.display = 'block'; return; }
+        if (current !== getAdminPassword()) { errEl.textContent = 'Current password is incorrect'; errEl.style.display = 'block'; return; }
+        if (!newPw || newPw.length < 4) { errEl.textContent = 'New password must be at least 4 characters'; errEl.style.display = 'block'; return; }
+        if (newPw !== confirm) { errEl.textContent = 'New passwords do not match'; errEl.style.display = 'block'; return; }
+        if (newPw === current) { errEl.textContent = 'New password must be different from current'; errEl.style.display = 'block'; return; }
+
+        setAdminPassword(newPw);
+        sucEl.textContent = 'Password updated successfully!';
+        sucEl.style.display = 'block';
+        showToast('Password changed successfully!');
+        setTimeout(function() { closePasswordModal(); }, 1500);
+    }
+
+    // ===== Close modals on overlay click =====
+    document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+        overlay.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+
+    // ===== Logout =====
+    function adminLogout() {
+        sessionStorage.removeItem('sh_admin_auth');
+        document.getElementById('admin-dashboard').style.display = 'none';
+        document.getElementById('admin-gate').style.display = 'flex';
+        const errorEl = document.getElementById('admin-login-error');
+        if (errorEl) errorEl.style.display = 'none';
+        const pwInput = document.querySelector('#admin-gate input[type="password"]');
+        if (pwInput) { pwInput.value = ''; pwInput.focus(); }
+    }
+
+    // ===== Update counts =====
+    const _origRenderProducts = renderAdminProducts;
+    renderAdminProducts = function() {
+        _origRenderProducts();
+        const countEl = document.getElementById('products-count');
+        if (countEl) {
+            const p = typeof getProducts === 'function' ? getProducts() : [];
+            countEl.textContent = p.length;
+        }
+    };
+    const _origRenderOrders = renderAdminOrders;
     renderAdminOrders = function() {
-      origRenderOrders();
-      const orders = JSON.parse(localStorage.getItem('sh_orders')) || [];
-      const countEl = document.getElementById('orders-count');
-      if (countEl) countEl.textContent = orders.length;
+        _origRenderOrders();
+        const orders = JSON.parse(localStorage.getItem('sh_orders') || '[]');
+        const countEl = document.getElementById('orders-count');
+        if (countEl) countEl.textContent = orders.length;
     };
   </script>
 </body>

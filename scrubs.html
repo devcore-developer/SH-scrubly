@@ -25,13 +25,14 @@
   <nav class="navbar scrolled" role="navigation" aria-label="Main navigation">
     <div class="container">
       <a href="index.html" class="nav-logo" aria-label="SH scrubly Home">
-        <span class="nav-logo-icon">SH</span>
+        <img src="logo.png" alt="SH scrubly" class="nav-logo-img" onerror="this.classList.add('hidden-logo')">
+
         scrubly
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="scrubs.html" class="active">Scrubs</a></li>
-        <li><a href="Lab Coats.html">Lab Coats</a></li>
+        <li><a href="labcoats.html">Lab Coats</a></li>
       </ul>
       <div class="nav-actions">
         <button class="nav-cart-btn" aria-label="Open cart">
@@ -50,7 +51,7 @@
     <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
     <a href="index.html">Home</a>
     <a href="scrubs.html">Scrubs</a>
-    <a href="Lab Coats.html">Lab Coats</a>
+    <a href="labcoats.html">Lab Coats</a>
   </div>
 
   <!-- Page Hero -->
@@ -83,8 +84,8 @@
   <section class="section cta-section" aria-label="Call to action">
     <div class="container reveal">
       <h2>Need Help Choosing the Right Size?</h2>
-      <p>Our team is ready to help you find the perfect fit. Reach out on WhatsApp for a free consultation.</p>
-      <a href="https://wa.me/201234567890" target="_blank" rel="noopener" class="btn btn-dark">Chat With Us</a>
+      <p>Reach out on Instagram and our team will help you find the perfect fit.</p>
+      <a href="https://www.instagram.com/sh_scrubly?igsh=dXIwY2kzMGV4cnk=" target="_blank" rel="noopener" class="btn btn-dark">Message Us on Instagram</a>
     </div>
   </section>
 
@@ -94,20 +95,20 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand-name">
-            <span class="nav-logo-icon" style="width:36px;height:36px;font-size:0.8rem;">SH</span>
+            <img src="logo.png" alt="SH" class="footer-logo-img" onerror="this.classList.add('hidden-logo')">
+            
             scrubly
           </div>
           <p class="footer-desc">Premium medical scrubs and Lab Coats designed for healthcare professionals who value comfort and style.</p>
           <div class="footer-social">
             <a href="https://www.instagram.com/sh_scrubly?igsh=dXIwY2kzMGV4cnk=" target="_blank" rel="noopener" aria-label="Instagram">&#128247;</a>
-            <a href="https://wa.me/201234567890" target="_blank" rel="noopener" aria-label="WhatsApp">&#128172;</a>
           </div>
         </div>
         <div class="footer-col">
           <h4>Shop</h4>
           <ul>
             <li><a href="scrubs.html">Scrubs</a></li>
-            <li><a href="Lab Coats.html">Lab Coats</a></li>
+            <li><a href="labcoats.html">Lab Coats</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -115,14 +116,13 @@
           <ul>
             <li><a href="scrubs.html">Women's Scrubs</a></li>
             <li><a href="scrubs.html">Men's Scrubs</a></li>
-            <li><a href="Lab Coats.html">Women's Lab Coats</a></li>
-            <li><a href="Lab Coats.html">Men's Lab Coats</a></li>
+            <li><a href="labcoats.html">Women's Lab Coats</a></li>
+            <li><a href="labcoats.html">Men's Lab Coats</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
           <ul>
-            <li><a href="https://wa.me/201234567890" target="_blank" rel="noopener">WhatsApp</a></li>
             <li><a href="https://www.instagram.com/sh_scrubly?igsh=dXIwY2kzMGV4cnk=" target="_blank" rel="noopener">Instagram</a></li>
           </ul>
         </div>
@@ -133,8 +133,6 @@
       </div>
     </div>
   </footer>
-
-  <a href="https://wa.me/201234567890" target="_blank" rel="noopener" class="float-whatsapp" aria-label="Chat on WhatsApp">&#128172;</a>
 
   <!-- Cart Sidebar -->
   <div class="cart-overlay" aria-hidden="true"></div>
@@ -147,7 +145,7 @@
     <div class="cart-footer">
       <div class="cart-total">
         <span class="cart-total-label">Total</span>
-        <span class="cart-total-value">$0.00</span>
+        <span class="cart-total-value">0.00 EGP</span>
       </div>
       <button class="btn btn-primary cart-checkout-btn">Proceed to Checkout</button>
     </div>

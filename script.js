@@ -1,44 +1,23 @@
 const CURRENCY = 'EGP';
 function formatPrice(n) { return n.toFixed(2) + ' ' + CURRENCY; }
-// ===== Default Products (seeded on first load) =====
-const DEFAULT_PRODUCTS = [
-  { id: 1, name: "Classic V-Neck Top", category: "scrubs", sub: "women", price: 45, image: "https://picsum.photos/seed/ws1/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#8B4513"], sizes: ["XS","S","M","L","XL","XXL"], badge: "Best Seller", desc: "Timeless V-neck design with side slits for effortless movement." },
-  { id: 2, name: "Modern Fit Tunic", category: "scrubs", sub: "women", price: 48, image: "https://picsum.photos/seed/ws2/400/530.jpg", colors: ["#4A6FA5","#2D6A4F","#6B4C6E"], sizes: ["XS","S","M","L","XL"], badge: "", desc: "Contemporary tunic with princess seams for a flattering silhouette." },
-  { id: 3, name: "Cargo Style Top", category: "scrubs", sub: "women", price: 52, image: "https://picsum.photos/seed/ws3/400/530.jpg", colors: ["#1A1A1A","#556B2F","#4A4A4A"], sizes: ["S","M","L","XL","XXL"], badge: "New", desc: "Functional cargo pockets with a sporty yet professional look." },
-  { id: 4, name: "Wrap Style Top", category: "scrubs", sub: "women", price: 50, image: "https://picsum.photos/seed/ws4/400/530.jpg", colors: ["#8B2252","#2D6A4F","#1A1A1A"], sizes: ["XS","S","M","L","XL"], badge: "", desc: "Elegant wrap design that flatters every body type beautifully." },
-  { id: 5, name: "Fitted Jogger Pants", category: "scrubs", sub: "women", price: 42, image: "https://picsum.photos/seed/ws5/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#4A4A4A"], sizes: ["XS","S","M","L","XL","XXL"], badge: "Popular", desc: "Tapered jogger fit with elastic ankle cuffs for modern style." },
-  { id: 6, name: "Classic Straight Pants", category: "scrubs", sub: "women", price: 40, image: "https://picsum.photos/seed/ws6/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#556B2F"], sizes: ["XS","S","M","L","XL","XXL"], badge: "", desc: "Traditional straight-leg cut with a comfortable mid-rise waist." },
-  { id: 7, name: "Flare Leg Pants", category: "scrubs", sub: "women", price: 44, image: "https://picsum.photos/seed/ws7/400/530.jpg", colors: ["#4A6FA5","#2D6A4F","#8B4513"], sizes: ["S","M","L","XL"], badge: "", desc: "Retro-inspired flare leg with a contemporary twist." },
-  { id: 8, name: "Cargo Pocket Pants", category: "scrubs", sub: "women", price: 46, image: "https://picsum.photos/seed/ws8/400/530.jpg", colors: ["#1A1A1A","#556B2F","#4A4A4A"], sizes: ["XS","S","M","L","XL","XXL"], badge: "New", desc: "Multi-pocket cargo design for those who need extra storage." },
-  { id: 9, name: "Classic V-Neck Top", category: "scrubs", sub: "men", price: 45, image: "https://picsum.photos/seed/ms1/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#4A6FA5"], sizes: ["S","M","L","XL","XXL","3XL"], badge: "Best Seller", desc: "Clean V-neck cut built for all-day professional comfort." },
-  { id: 10, name: "Modern Fit Polo", category: "scrubs", sub: "men", price: 48, image: "https://picsum.photos/seed/ms2/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#556B2F"], sizes: ["S","M","L","XL","XXL"], badge: "", desc: "Polo-collar scrub top with a refined, tailored fit." },
-  { id: 11, name: "Cargo Style Top", category: "scrubs", sub: "men", price: 52, image: "https://picsum.photos/seed/ms3/400/530.jpg", colors: ["#1A1A1A","#556B2F","#4A4A4A"], sizes: ["S","M","L","XL","XXL","3XL"], badge: "Popular", desc: "Heavy-duty cargo pockets with reinforced stitching." },
-  { id: 12, name: "Henley Style Top", category: "scrubs", sub: "men", price: 50, image: "https://picsum.photos/seed/ms4/400/530.jpg", colors: ["#2D6A4F","#4A6FA5","#8B4513"], sizes: ["S","M","L","XL","XXL"], badge: "New", desc: "Casual henley placket for a relaxed yet polished look." },
-  { id: 13, name: "Classic Straight Pants", category: "scrubs", sub: "men", price: 40, image: "https://picsum.photos/seed/ms5/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#4A4A4A"], sizes: ["S","M","L","XL","XXL","3XL"], badge: "", desc: "Roomy straight-leg fit with a drawstring waist." },
-  { id: 14, name: "Modern Jogger Pants", category: "scrubs", sub: "men", price: 44, image: "https://picsum.photos/seed/ms6/400/530.jpg", colors: ["#1A1A1A","#2D6A4F","#556B2F"], sizes: ["S","M","L","XL","XXL"], badge: "Best Seller", desc: "Sleek jogger silhouette with professional appeal." },
-  { id: 15, name: "Cargo Pocket Pants", category: "scrubs", sub: "men", price: 46, image: "https://picsum.photos/seed/ms7/400/530.jpg", colors: ["#4A4A4A","#2D6A4F","#1A1A1A"], sizes: ["S","M","L","XL","XXL","3XL"], badge: "", desc: "Rugged cargo pants designed for demanding shifts." },
-  { id: 16, name: "Tall Fit Straight Pants", category: "scrubs", sub: "men", price: 42, image: "https://picsum.photos/seed/ms8/400/530.jpg", colors: ["#2D6A4F","#1A1A1A"], sizes: ["M","L","XL","XXL","3XL"], badge: "New", desc: "Extended length for taller frames, same great comfort." },
-  { id: 17, name: "Classic Kimono Robe", category: "Lab Coats", sub: "women", price: 65, image: "https://picsum.photos/seed/wb1/400/530.jpg", colors: ["#F5F0E8","#E8DDD0","#D4C5B2"], sizes: ["S","M","L","XL"], badge: "Best Seller", desc: "Lightweight kimono style with an inner tie for secure closure." },
-  { id: 18, name: "Luxury Shawl Collar", category: "Lab Coats", sub: "women", price: 75, image: "https://picsum.photos/seed/wb2/400/530.jpg", colors: ["#F5F0E8","#2D6A4F","#1A1A1A"], sizes: ["S","M","L","XL"], badge: "Premium", desc: "Plush shawl collar robe with deep pockets and belt loops." },
-  { id: 19, name: "Lightweight Waffle", category: "Lab Coats", sub: "women", price: 55, image: "https://picsum.photos/seed/wb3/400/530.jpg", colors: ["#F5F0E8","#B8D4E3","#D4C5B2"], sizes: ["XS","S","M","L","XL"], badge: "", desc: "Breathable waffle weave perfect for warmer climates." },
-  { id: 20, name: "Spa Style Robe", category: "Lab Coats", sub: "women", price: 60, image: "https://picsum.photos/seed/wb4/400/530.jpg", colors: ["#F5F0E8","#E8DDD0"], sizes: ["S","M","L","XL"], badge: "Popular", desc: "Professional spa-grade robe with snap closure option." },
-  { id: 21, name: "Hooded Bathrobe", category: "Lab Coats", sub: "women", price: 70, image: "https://picsum.photos/seed/wb5/400/530.jpg", colors: ["#F5F0E8","#B8D4E3","#E8DDD0"], sizes: ["S","M","L","XL"], badge: "New", desc: "Cozy hooded design for extra warmth after a shower." },
-  { id: 22, name: "Long Turkish Robe", category: "Lab Coats", sub: "women", price: 80, image: "https://picsum.photos/seed/wb6/400/530.jpg", colors: ["#F5F0E8","#2D6A4F"], sizes: ["S","M","L","XL"], badge: "Premium", desc: "Premium Turkish cotton with exceptional absorbency." },
-  { id: 23, name: "Classic Kimono Robe", category: "Lab Coats", sub: "men", price: 65, image: "https://picsum.photos/seed/mb1/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#4A4A4A"], sizes: ["M","L","XL","XXL"], badge: "Best Seller", desc: "Timeless kimono cut in durable, quick-dry fabric." },
-  { id: 24, name: "Luxury Shawl Collar", category: "Lab Coats", sub: "men", price: 75, image: "https://picsum.photos/seed/mb2/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#556B2F"], sizes: ["M","L","XL","XXL"], badge: "Premium", desc: "Hotel-quality shawl collar with premium cotton construction." },
-  { id: 25, name: "Lightweight Waffle", category: "Lab Coats", sub: "men", price: 55, image: "https://picsum.photos/seed/mb3/400/530.jpg", colors: ["#F5F0E8","#2D6A4F","#4A4A4A"], sizes: ["M","L","XL","XXL"], badge: "", desc: "Light and breathable waffle weave for everyday comfort." },
-  { id: 26, name: "Spa Style Robe", category: "Lab Coats", sub: "men", price: 60, image: "https://picsum.photos/seed/mb4/400/530.jpg", colors: ["#F5F0E8","#1A1A1A"], sizes: ["M","L","XL","XXL"], badge: "Popular", desc: "Clean-lined spa robe used by professionals worldwide." },
-  { id: 27, name: "Hooded Bathrobe", category: "Lab Coats", sub: "men", price: 70, image: "https://picsum.photos/seed/mb5/400/530.jpg", colors: ["#2D6A4F","#1A1A1A","#4A4A4A"], sizes: ["M","L","XL","XXL"], badge: "New", desc: "Functional hood with deep side pockets for utility." },
-  { id: 28, name: "Long Turkish Robe", category: "Lab Coats", sub: "men", price: 80, image: "https://picsum.photos/seed/mb6/400/530.jpg", colors: ["#F5F0E8","#2D6A4F","#1A1A1A"], sizes: ["M","L","XL","XXL"], badge: "Premium", desc: "Extra-long Turkish cotton robe with superior softness." },
-];
+
+// ===== Data Version (bump to force re-seed) =====
+const DATA_VERSION = 3;
+
+// ===== Default Products (empty — add via admin) =====
+const DEFAULT_PRODUCTS = [];
 
 // ===== Products Data Layer =====
 function getProducts() {
+  // Check version — if outdated, clear and re-seed
+  if (localStorage.getItem('sh_data_version') !== String(DATA_VERSION)) {
+    localStorage.removeItem('sh_products');
+    localStorage.setItem('sh_data_version', DATA_VERSION);
+  }
   const stored = localStorage.getItem('sh_products');
   if (stored) {
     try { return JSON.parse(stored); } catch(e) { /* fallback */ }
   }
-  // Seed defaults
   localStorage.setItem('sh_products', JSON.stringify(DEFAULT_PRODUCTS));
   return [...DEFAULT_PRODUCTS];
 }
@@ -48,12 +27,12 @@ function saveProductsToStorage(prods) {
 }
 
 function getProductById(id) {
-  return getProducts().find(p => p.id === id);
+  return getProducts().find(p => String(p.id) === String(id));
 }
 
 function addProduct(data) {
   const prods = getProducts();
-  const maxId = prods.reduce((max, p) => Math.max(max, p.id), 0);
+  const maxId = prods.reduce((max, p) => Math.max(max, Number(p.id) || 0), 0);
   const newProduct = {
     id: maxId + 1,
     name: data.name,
@@ -73,7 +52,7 @@ function addProduct(data) {
 
 function updateProduct(id, data) {
   const prods = getProducts();
-  const idx = prods.findIndex(p => p.id === id);
+  const idx = prods.findIndex(p => String(p.id) === String(id));
   if (idx === -1) return null;
   prods[idx] = {
     ...prods[idx],
@@ -93,13 +72,16 @@ function updateProduct(id, data) {
 
 function deleteProduct(id) {
   let prods = getProducts();
-  prods = prods.filter(p => p.id !== id);
+  prods = prods.filter(p => String(p.id) !== String(id));
   saveProductsToStorage(prods);
 }
 
 // ===== State =====
 let cart = JSON.parse(localStorage.getItem('sh_cart')) || [];
 let currentTab = 'women';
+let _detailSelectedColor = null;
+let _detailSelectedSize = null;
+let _detailProductId = null;
 
 // ===== DOM Helpers =====
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
@@ -139,11 +121,11 @@ function updateCartCount() {
   }
 }
 
-function addToCart(productId, size = null, color = null) {
+function addToCart(productId, size, color) {
   const product = getProductById(productId);
   if (!product) return;
   const selectedSize = size || product.sizes[Math.min(2, product.sizes.length - 1)];
-  const selectedColor = color || product.colors[0];
+  const selectedColor = color || product.colors[0] || '#4EA88A';
   const key = `${productId}-${selectedSize}-${selectedColor}`;
   const existing = cart.find(item => item.key === key);
   if (existing) {
@@ -248,11 +230,6 @@ function closeOrderModal() {
 function submitOrder(e) {
   e.preventDefault();
   const form = e.target;
-  const name = form.querySelector('[name="name"]').value.trim();
-  const phone = form.querySelector('[name="phone"]').value.trim();
-  const email = form.querySelector('[name="email"]').value.trim();
-  const address = form.querySelector('[name="address"]').value.trim();
-  const notes = form.querySelector('[name="notes"]').value.trim();
   let valid = true;
   $$('.form-group[data-required]', form).forEach(g => {
     const input = g.querySelector('input, textarea');
@@ -264,7 +241,13 @@ function submitOrder(e) {
   const order = {
     id: 'SH' + Date.now().toString(36).toUpperCase(),
     date: new Date().toISOString(),
-    customer: { name, phone, email, address, notes },
+    customer: {
+      name: form.querySelector('[name="name"]').value.trim(),
+      phone: form.querySelector('[name="phone"]').value.trim(),
+      email: form.querySelector('[name="email"]').value.trim(),
+      address: form.querySelector('[name="address"]').value.trim(),
+      notes: form.querySelector('[name="notes"]').value.trim()
+    },
     items: [...cart],
     total: getCartTotal(),
     status: 'pending'
@@ -278,6 +261,126 @@ function submitOrder(e) {
   showToast('Order placed successfully! We will contact you soon.');
 }
 
+// ===== Product Detail Modal =====
+function createProductDetailModal() {
+  if ($('.product-detail-modal')) return;
+  const modal = document.createElement('div');
+  modal.className = 'modal-overlay product-detail-modal';
+  modal.setAttribute('aria-hidden', 'true');
+  modal.innerHTML = `
+    <div class="modal" style="padding:0;overflow:hidden;" role="dialog" aria-label="Product details">
+      <div class="product-detail-grid">
+        <div class="product-detail-image">
+          <button class="product-detail-close" onclick="closeProductDetail()" aria-label="Close">&times;</button>
+          <img id="detail-image" src="" alt="">
+          <div class="product-detail-badge" id="detail-badge" style="display:none;"></div>
+        </div>
+        <div class="product-detail-info">
+          <div class="product-detail-category" id="detail-category"></div>
+          <h2 class="product-detail-name" id="detail-name"></h2>
+          <div class="product-detail-price" id="detail-price"></div>
+          <div class="product-detail-section" id="detail-colors-section">
+            <label>Color</label>
+            <div class="detail-colors" id="detail-colors"></div>
+          </div>
+          <div class="product-detail-section" id="detail-sizes-section">
+            <label>Size</label>
+            <div class="detail-sizes" id="detail-sizes"></div>
+          </div>
+          <p class="product-detail-desc" id="detail-desc"></p>
+          <button class="btn btn-primary product-detail-add-btn" id="detail-add-btn" onclick="addDetailToCart()">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) closeProductDetail();
+  });
+}
+
+function openProductDetail(productId) {
+  const product = getProductById(productId);
+  if (!product) return;
+  createProductDetailModal();
+
+  _detailProductId = productId;
+  _detailSelectedColor = product.colors[0] || '#4EA88A';
+  _detailSelectedSize = product.sizes[0] || 'M';
+
+  // Populate
+  const img = $('#detail-image');
+  img.src = product.image;
+  img.alt = product.name;
+  $('#detail-category').textContent = (product.sub === 'women' ? "Women's " : "Men's ") + (product.category === 'scrubs' ? 'Scrubs' : 'Lab Coats');
+  $('#detail-name').textContent = product.name;
+  $('#detail-price').textContent = formatPrice(product.price);
+  $('#detail-desc').textContent = product.desc || '';
+
+  // Badge
+  const badgeEl = $('#detail-badge');
+  if (product.badge) {
+    badgeEl.textContent = product.badge;
+    badgeEl.style.display = 'block';
+  } else {
+    badgeEl.style.display = 'none';
+  }
+
+  // Colors
+  const colorsSection = $('#detail-colors-section');
+  const colorsContainer = $('#detail-colors');
+  if (product.colors.length > 0) {
+    colorsSection.style.display = 'block';
+    colorsContainer.innerHTML = product.colors.map((c, i) =>
+      `<div class="detail-color ${i === 0 ? 'selected' : ''}" style="background:${c}" data-color="${c}" onclick="selectDetailColor(this, '${c}')"></div>`
+    ).join('');
+  } else {
+    colorsSection.style.display = 'none';
+  }
+
+  // Sizes
+  const sizesSection = $('#detail-sizes-section');
+  const sizesContainer = $('#detail-sizes');
+  if (product.sizes.length > 0) {
+    sizesSection.style.display = 'block';
+    sizesContainer.innerHTML = product.sizes.map((s, i) =>
+      `<div class="detail-size ${i === 0 ? 'selected' : ''}" data-size="${s}" onclick="selectDetailSize(this, '${s}')">${s}</div>`
+    ).join('');
+  } else {
+    sizesSection.style.display = 'none';
+  }
+
+  const modal = $('.product-detail-modal');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProductDetail() {
+  const modal = $('.product-detail-modal');
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+function selectDetailColor(el, color) {
+  $$('.detail-color').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  _detailSelectedColor = color;
+}
+
+function selectDetailSize(el, size) {
+  $$('.detail-size').forEach(s => s.classList.remove('selected'));
+  el.classList.add('selected');
+  _detailSelectedSize = size;
+}
+
+function addDetailToCart() {
+  if (!_detailProductId) return;
+  addToCart(_detailProductId, _detailSelectedSize, _detailSelectedColor);
+  closeProductDetail();
+}
+
 // ===== Render Products =====
 function renderProducts(container, items) {
   if (!container) return;
@@ -285,16 +388,17 @@ function renderProducts(container, items) {
     container.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--text-muted);">
       <div style="font-size:3rem;margin-bottom:12px;opacity:0.3;">&#128717;</div>
       <p>No products found in this category.</p>
+      <p style="font-size:0.85rem;margin-top:8px;">Add products via the Admin Dashboard.</p>
     </div>`;
     return;
   }
   container.innerHTML = items.map((p, i) => `
-    <div class="product-card reveal reveal-delay-${(i % 4) + 1}">
+    <div class="product-card reveal reveal-delay-${(i % 4) + 1}" onclick="openProductDetail(${p.id})">
       <div class="product-card-image">
         <img src="${p.image}" alt="${p.name}" loading="lazy">
         ${p.badge ? `<span class="product-card-badge">${p.badge}</span>` : ''}
         <div class="product-card-actions">
-          <button class="btn" onclick="addToCart(${p.id})">Add to Cart</button>
+          <button class="btn" onclick="event.stopPropagation(); openProductDetail(${p.id})">View Details</button>
         </div>
       </div>
       <div class="product-card-info">
@@ -394,6 +498,21 @@ function initNav() {
   $$('.form-group[data-required] input, .form-group[data-required] textarea').forEach(input => {
     input.addEventListener('input', () => input.closest('.form-group').classList.remove('error'));
   });
+
+  // Try to load logo image
+  const logoImg = $('.nav-logo-img');
+  if (logoImg) {
+    const testImg = new Image();
+    testImg.onload = function() { logoImg.classList.add('visible'); };
+    testImg.src = logoImg.src;
+  }
+  const footerLogoImg = $('.footer-logo-img');
+  if (footerLogoImg) {
+    const testImg2 = new Image();
+    testImg2.onload = function() { footerLogoImg.classList.add('visible'); };
+    testImg2.src = footerLogoImg.src;
+  }
+
   updateCartCount();
 }
 
@@ -418,9 +537,15 @@ function initPreloader() {
   });
 }
 
-// ===== Admin Password Gate =====
-const ADMIN_PASSWORD = 'scrubly2025';
+// ===== Admin Password =====
+function getAdminPassword() {
+  return localStorage.getItem('sh_admin_password') || 'scrubly2025';
+}
+function setAdminPassword(newPass) {
+  localStorage.setItem('sh_admin_password', newPass);
+}
 
+// ===== Admin Password Gate =====
 function initAdminGate() {
   const gate = $('#admin-gate');
   const dashboard = $('#admin-dashboard');
@@ -436,9 +561,10 @@ function initAdminGate() {
   const form = $('#admin-login-form');
   const errorEl = $('#admin-login-error');
   const passInput = $('#admin-password');
+  if (!form) return;
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (passInput.value === ADMIN_PASSWORD) {
+    if (passInput.value === getAdminPassword()) {
       sessionStorage.setItem('sh_admin_auth', 'true');
       gate.style.display = 'none';
       dashboard.style.display = 'block';
@@ -447,13 +573,12 @@ function initAdminGate() {
       errorEl.style.display = 'block';
       passInput.value = '';
       passInput.focus();
-      gate.querySelector('.admin-login-card').style.animation = 'none';
-      requestAnimationFrame(() => {
-        gate.querySelector('.admin-login-card').style.animation = 'shake 0.5s ease';
-      });
+      const card = gate.querySelector('.admin-login-card');
+      card.style.animation = 'none';
+      requestAnimationFrame(() => { card.style.animation = 'shake 0.5s ease'; });
     }
   });
-  passInput.focus();
+  if (passInput) passInput.focus();
 }
 
 // ===== Admin Functions =====
@@ -484,6 +609,8 @@ function renderAdminStats() {
 function renderAdminOrders() {
   const orders = JSON.parse(localStorage.getItem('sh_orders')) || [];
   const tbody = $('#orders-tbody');
+  const countEl = $('#orders-count');
+  if (countEl) countEl.textContent = orders.length;
   if (!tbody) return;
   if (orders.length === 0) {
     tbody.innerHTML = `<tr><td colspan="6"><div class="admin-empty"><div class="admin-empty-icon">&#128203;</div><p>No orders yet</p></div></td></tr>`;
@@ -590,8 +717,10 @@ function clearAllOrders() {
 // ===== Admin Products Management =====
 function renderAdminProducts() {
   const tbody = $('#products-tbody');
-  if (!tbody) return;
+  const countEl = $('#products-count');
   const products = getProducts();
+  if (countEl) countEl.textContent = products.length;
+  if (!tbody) return;
   if (products.length === 0) {
     tbody.innerHTML = `<tr><td colspan="7"><div class="admin-empty"><div class="admin-empty-icon">&#128717;</div><p>No products yet. Add your first product!</p></div></td></tr>`;
     return;
@@ -636,9 +765,12 @@ function openProductModal(mode, productId) {
 
   title.textContent = mode === 'edit' ? 'Edit Product' : 'Add New Product';
 
+  // Reset image upload state
+  if (typeof removeUploadedImage === 'function') removeUploadedImage();
+
   // Reset colors
   const colorsContainer = $('#product-colors-container');
-  colorsContainer.innerHTML = '';
+  if (colorsContainer) colorsContainer.innerHTML = '';
 
   if (mode === 'edit') {
     const product = getProductById(productId);
@@ -647,7 +779,8 @@ function openProductModal(mode, productId) {
     form.querySelector('[name="category"]').value = product.category;
     form.querySelector('[name="sub"]').value = product.sub;
     form.querySelector('[name="price"]').value = product.price;
-    document.getElementById('final-image-value').value = product.image;
+    const finalImg = document.getElementById('final-image-value');
+    if (finalImg) finalImg.value = product.image;
     form.querySelector('[name="badge"]').value = product.badge;
     form.querySelector('[name="desc"]').value = product.desc;
     // Colors
@@ -657,21 +790,47 @@ function openProductModal(mode, productId) {
     $$('#product-form input[name="sizes"]').forEach(cb => {
       cb.checked = product.sizes.includes(cb.value);
     });
-    form.dataset.mode = 'edit';
-    form.dataset.productId = productId;
+    // Image preview
+    if (product.image) {
+      const previewImg = document.getElementById('upload-preview-img');
+      const previewContainer = document.getElementById('upload-preview');
+      const uploadZone = document.getElementById('upload-zone');
+      if (previewImg && previewContainer && uploadZone) {
+        previewImg.src = product.image;
+        previewContainer.classList.add('visible');
+        uploadZone.style.display = 'none';
+        if (product.image.startsWith('data:')) {
+          if (typeof currentBase64Image !== 'undefined') currentBase64Image = product.image;
+          const fnEl = document.getElementById('upload-file-name');
+          const fsEl = document.getElementById('upload-file-size');
+          if (fnEl) fnEl.textContent = 'Uploaded image';
+          if (fsEl) fsEl.textContent = Math.round((product.image.length * 3) / 4 / 1024) + ' KB';
+        } else {
+          const urlInput = document.getElementById('image-url-input');
+          if (urlInput) urlInput.value = product.image;
+          const fnEl = document.getElementById('upload-file-name');
+          const fsEl = document.getElementById('upload-file-size');
+          if (fnEl) fnEl.textContent = 'External URL';
+          if (fsEl) fsEl.textContent = 'Linked';
+        }
+      }
+    }
   } else {
     form.reset();
     form.querySelector('[name="category"]').value = 'scrubs';
     form.querySelector('[name="sub"]').value = 'women';
-    addColorField('#2D6A4F');
+    addColorField('#4EA88A');
     addColorField('#1A1A1A');
-    // Default sizes
     $$('#product-form input[name="sizes"]').forEach(cb => {
       cb.checked = ['S','M','L','XL'].includes(cb.value);
     });
-    form.dataset.mode = 'add';
-    form.dataset.productId = '';
+    const finalImg = document.getElementById('final-image-value');
+    if (finalImg) finalImg.value = '';
   }
+
+  // Store mode
+  if (typeof _productMode !== 'undefined') _productMode = mode;
+  if (typeof _productEditId !== 'undefined') _productEditId = productId || null;
 
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -680,6 +839,7 @@ function openProductModal(mode, productId) {
 function closeProductModal() {
   const modal = $('#product-modal');
   if (modal) { modal.classList.remove('open'); document.body.style.overflow = ''; }
+  if (typeof removeUploadedImage === 'function') removeUploadedImage();
 }
 
 function addColorField(value = '') {
@@ -688,57 +848,11 @@ function addColorField(value = '') {
   const row = document.createElement('div');
   row.style.cssText = 'display:flex;gap:8px;align-items:center;margin-bottom:8px;';
   row.innerHTML = `
-    <input type="color" value="${value || '#2D6A4F'}" style="width:38px;height:38px;border:2px solid var(--border);border-radius:8px;padding:2px;cursor:pointer;background:var(--bg);" oninput="this.nextElementSibling.value=this.value">
-    <input type="text" value="${value}" placeholder="#2D6A4F" style="flex:1;padding:10px 14px;border:2px solid var(--border);border-radius:8px;font-size:0.85rem;font-family:monospace;outline:none;background:var(--bg);" oninput="if(/^#[0-9A-Fa-f]{6}$/.test(this.value))this.previousElementSibling.value=this.value">
+    <input type="color" value="${value || '#4EA88A'}" style="width:38px;height:38px;border:2px solid var(--border);border-radius:8px;padding:2px;cursor:pointer;background:var(--bg);" oninput="this.nextElementSibling.value=this.value">
+    <input type="text" value="${value}" placeholder="#4EA88A" style="flex:1;padding:10px 14px;border:2px solid var(--border);border-radius:8px;font-size:0.85rem;font-family:monospace;outline:none;background:var(--bg);" oninput="if(/^#[0-9A-Fa-f]{6}$/.test(this.value))this.previousElementSibling.value=this.value">
     <button type="button" onclick="this.parentElement.remove()" style="width:36px;height:36px;border-radius:8px;background:rgba(239,68,68,0.1);color:#EF4444;display:flex;align-items:center;justify-content:center;font-size:1.1rem;border:none;cursor:pointer;flex-shrink:0;">&times;</button>
   `;
   container.appendChild(row);
-}
-
-function submitProductForm(e) {
-  e.preventDefault();
-  const form = e.target;
-  const name = form.querySelector('[name="name"]').value.trim();
-  const category = form.querySelector('[name="category"]').value;
-  const sub = form.querySelector('[name="sub"]').value;
-  const price = form.querySelector('[name="price"]').value;
-  const image = document.getElementById('final-image-value').value.trim();
-  const badge = form.querySelector('[name="badge"]').value.trim();
-  const desc = form.querySelector('[name="desc"]').value.trim();
-
-  if (!name || !price) {
-    showToast('Name and price are required', 'error');
-    return;
-  }
-
-  // Collect colors
-  const colorInputs = $$('#product-colors-container input[type="text"]');
-  const colors = Array.from(colorInputs).map(i => i.value.trim());
-
-  // Collect sizes
-  const sizeCheckboxes = $$('#product-form input[name="sizes"]:checked');
-  const sizes = Array.from(sizeCheckboxes).map(cb => cb.value);
-
-  if (sizes.length === 0) {
-    showToast('Select at least one size', 'error');
-    return;
-  }
-
-  const data = { name, category, sub, price, image, badge, desc, colors, sizes };
-  const mode = form.dataset.mode;
-  const productId = parseInt(form.dataset.productId);
-
-  if (mode === 'edit' && productId) {
-    updateProduct(productId, data);
-    showToast('Product updated successfully');
-  } else {
-    addProduct(data);
-    showToast('Product added successfully');
-  }
-
-  closeProductModal();
-  renderAdminProducts();
-  renderAdminStats();
 }
 
 function adminDeleteProduct(id) {
@@ -759,12 +873,23 @@ function resetProductsToDefault() {
   showToast('Products reset to defaults');
 }
 
+function adminLogout() {
+  sessionStorage.removeItem('sh_admin_auth');
+  const gate = $('#admin-gate');
+  const dashboard = $('#admin-dashboard');
+  if (gate) gate.style.display = 'flex';
+  if (dashboard) dashboard.style.display = 'none';
+  const errorEl = $('#admin-login-error');
+  if (errorEl) errorEl.style.display = 'none';
+  const pwInput = $('#admin-password');
+  if (pwInput) { pwInput.value = ''; pwInput.focus(); }
+}
+
 // ===== Init =====
 document.addEventListener('DOMContentLoaded', () => {
   initPreloader();
   initNav();
   initReveal();
-  // Seed products on first visit (for storefront pages)
   getProducts();
   updateCategoryCounts();
   if ($('.hero')) { initFeaturedProducts(); }

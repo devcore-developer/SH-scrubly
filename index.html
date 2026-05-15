@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="SH scrubly — Premium medical scrubs and Lab Coats for healthcare professionals. Shop stylish, comfortable scrubs and luxurious Lab Coats for men and women.">
-  <meta name="keywords" content="medical scrubs, Lab Coats, healthcare uniforms, nursing scrubs, doctor scrubs, premium scrubs, SH scrubly">
+  <meta name="keywords" content="medical scrubs, Lab Coats, healthcare uniforms, nursing scrubs, doctor scrubs, medical Lab Coats, premium scrubs, SH scrubly">
   <meta name="author" content="SH scrubly">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="SH scrubly — Premium Medical Scrubs & Lab Coats">
   <meta property="og:description" content="Discover premium medical scrubs and luxurious Lab Coats designed for comfort, style, and durability.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://shscrubly.com">
-  <meta property="og:image" content="https://picsum.photos/seed/og-shscrubly/1200/630.jpg">
+  <meta property="og:image" content="logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <title>SH scrubly — Premium Medical Scrubs & Lab Coats</title>
   <link rel="canonical" href="https://shscrubly.com">
@@ -27,6 +27,7 @@
     "description": "Premium medical scrubs and Lab Coats for healthcare professionals",
     "url": "https://shscrubly.com",
     "priceRange": "$$",
+    "telephone": "+201234567890",
     "sameAs": ["https://www.instagram.com/sh_scrubly?igsh=dXIwY2kzMGV4cnk="]
   }
   </script>
@@ -34,19 +35,21 @@
 <body>
 
   <!-- Preloader -->
-  <div class="preloader"><span class="preloader-logo">SH scrubly</span></div>
+  <div class="preloader">
+    <img src="logo.jpg" alt="SH scrubly" class="preloader-logo">
+  </div>
 
   <!-- Navigation -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="container">
       <a href="index.html" class="nav-logo" aria-label="SH scrubly Home">
-        <img src="logo.png" alt="SH scrubly" class="nav-logo-img" onerror="this.classList.add('hidden-logo')">
-        scrubly
+        <img src="logo.jpg" alt="SH scrubly Logo">
+        <span>SH scrubly</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="scrubs.html">Scrubs</a></li>
-        <li><a href="labcoats.html">Lab Coats</a></li>
+        <li><a href="Lab_Coats.html">Lab Coats</a></li>
       </ul>
       <div class="nav-actions">
         <button class="nav-cart-btn" aria-label="Open cart">
@@ -65,7 +68,7 @@
     <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
     <a href="index.html">Home</a>
     <a href="scrubs.html">Scrubs</a>
-    <a href="labcoats.html">Lab Coats</a>
+    <a href="Lab_Coats.html">Lab Coats</a>
   </div>
 
   <!-- Hero Section -->
@@ -81,7 +84,7 @@
         <p class="hero-desc">Premium scrubs and Lab Coats crafted for healthcare professionals who refuse to compromise on style or comfort.</p>
         <div class="hero-buttons">
           <a href="scrubs.html" class="btn btn-primary">Shop Scrubs</a>
-          <a href="labcoats.html" class="btn btn-outline">Explore Lab Coats</a>
+          <a href="Lab_Coats.html" class="btn btn-outline">Explore Lab Coats</a>
         </div>
         <div class="hero-stats">
           <div>
@@ -101,8 +104,8 @@
       <div class="hero-visual">
         <div class="hero-image-grid">
           <div class="hero-img"><img src="1.jpg" alt="Medical professional wearing SH scrubly scrubs" loading="eager"></div>
-          <div class="hero-img"><img src="3.jpg" alt="Premium medical scrub top detail" loading="eager"></div>
-          <div class="hero-img"><img src="4.jpg" alt="Medical Lab Coat luxury fabric" loading="eager"></div>
+          <div class="hero-img"><img src="4.jpg" alt="Premium medical scrub top detail" loading="eager"></div>
+          <div class="hero-img"><img src="3.jpg" alt="Medical bathrobe luxury fabric" loading="eager"></div>
           <div class="hero-img"><img src="2.jpg" alt="Healthcare professional in stylish scrubs" loading="eager"></div>
         </div>
       </div>
@@ -119,7 +122,7 @@
       </div>
       <div class="categories-grid">
         <a href="scrubs.html" class="category-card reveal reveal-delay-1">
-          <div class="category-card-bg"><img src="3.jpg" alt="Women's scrubs collection" loading="lazy"></div>
+          <div class="category-card-bg"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=800&fit=crop" alt="Women's scrubs collection" loading="lazy"></div>
           <div class="category-card-overlay">
             <span class="category-card-label">Scrubs</span>
             <span class="category-card-name">Women's Scrubs</span>
@@ -127,8 +130,8 @@
           </div>
           <span class="category-card-arrow">&#8594;</span>
         </a>
-        <a href="scrubs.html" class="category-card reveal reveal-delay-2" onclick="setTimeout(()=>{const t=document.querySelector('[data-tab=men]');if(t)t.click();},100)">
-          <div class="category-card-bg"><img src="1.jpg" alt="Men's scrubs collection" loading="lazy"></div>
+        <a href="scrubs.html" class="category-card reveal reveal-delay-2" onclick="setTimeout(()=>document.querySelector('[data-tab=men]')&&document.querySelector('[data-tab=men]').click(),100)">
+          <div class="category-card-bg"><img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&h=800&fit=crop" alt="Men's scrubs collection" loading="lazy"></div>
           <div class="category-card-overlay">
             <span class="category-card-label">Scrubs</span>
             <span class="category-card-name">Men's Scrubs</span>
@@ -136,8 +139,8 @@
           </div>
           <span class="category-card-arrow">&#8594;</span>
         </a>
-        <a href="labcoats.html" class="category-card reveal reveal-delay-3">
-          <div class="category-card-bg"><img src="5.jpg" alt="Women's Lab Coats collection" loading="lazy"></div>
+        <a href="Lab_Coats.html" class="category-card reveal reveal-delay-3">
+          <div class="category-card-bg"><img src="https://images.unsplash.com/photo-1584467735815-f778f274e296?w=600&h=800&fit=crop" alt="Women's Lab Coats collection" loading="lazy"></div>
           <div class="category-card-overlay">
             <span class="category-card-label">Lab Coats</span>
             <span class="category-card-name">Women's Lab Coats</span>
@@ -145,8 +148,8 @@
           </div>
           <span class="category-card-arrow">&#8594;</span>
         </a>
-        <a href="labcoats.html" class="category-card reveal reveal-delay-4" onclick="setTimeout(()=>{const t=document.querySelector('[data-tab=men]');if(t)t.click();},100)">
-          <div class="category-card-bg"><img src="5.jpg" alt="Men's Lab Coats collection" loading="lazy"></div>
+        <a href="Lab_Coats.html" class="category-card reveal reveal-delay-4" onclick="setTimeout(()=>document.querySelector('[data-tab=men]')&&document.querySelector('[data-tab=men]').click(),100)">
+          <div class="category-card-bg"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&h=800&fit=crop" alt="Men's Lab Coats collection" loading="lazy"></div>
           <div class="category-card-overlay">
             <span class="category-card-label">Lab Coats</span>
             <span class="category-card-name">Men's Lab Coats</span>
@@ -161,12 +164,14 @@
   <!-- CTA Section -->
   <section class="section cta-section" aria-label="Call to action">
     <div class="container reveal">
-      <span class="section-label" style="color:var(--primary-dark);">Get in Touch</span>
+      <span class="section-label" style="background: rgba(255,255,255,0.2); color: #fff;">Get in Touch</span>
       <h2>Ready to Upgrade Your Workwear?</h2>
-      <p>Browse our full collection and reach out on Instagram for sizing help and orders.</p>
+      <p>Order now via Instagram or browse our full collection. Free sizing consultations available.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://www.instagram.com/sh_scrubly?igsh=dXIwY2kzMGV4cnk=" target="_blank" rel="noopener" class="btn btn-dark">Follow on Instagram</a>
-        <a href="scrubs.html" class="btn btn-outline" style="border-color:var(--primary-dark);color:var(--primary-dark);">Browse Collection</a>
+        <a href="https://www.instagram.com/sh_scrubly?igsh=dXIwY2kzMGV4cnk=" target="_blank" rel="noopener" class="btn btn-dark">
+          <span>📷</span> Order on Instagram
+        </a>
+        <a href="scrubs.html" class="btn btn-outline" style="border-color:#fff;color:#fff;">Browse Collection</a>
       </div>
     </div>
   </section>
@@ -177,9 +182,8 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand-name">
-            <img src="logo.png" alt="SH" class="footer-logo-img" onerror="this.classList.add('hidden-logo')">
-            
-            scrubly
+            <img src="logo.jpg" alt="SH scrubly Logo">
+            <span>SH scrubly</span>
           </div>
           <p class="footer-desc">Premium medical scrubs and Lab Coats designed for healthcare professionals who value comfort and style.</p>
           <div class="footer-social">
@@ -190,7 +194,7 @@
           <h4>Shop</h4>
           <ul>
             <li><a href="scrubs.html">Scrubs</a></li>
-            <li><a href="labcoats.html">Lab Coats</a></li>
+            <li><a href="Lab_Coats.html">Lab Coats</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -198,8 +202,8 @@
           <ul>
             <li><a href="scrubs.html">Women's Scrubs</a></li>
             <li><a href="scrubs.html">Men's Scrubs</a></li>
-            <li><a href="labcoats.html">Women's Lab Coats</a></li>
-            <li><a href="labcoats.html">Men's Lab Coats</a></li>
+            <li><a href="Lab_Coats.html">Women's Lab Coats</a></li>
+            <li><a href="Lab_Coats.html">Men's Lab Coats</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -215,6 +219,9 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating Instagram -->
+  <a href="https://www.instagram.com/sh_scrubly?igsh=dXIwY2kzMGV4cnk=" target="_blank" rel="noopener" class="float-instagram" aria-label="Chat on Instagram">&#128247;</a>
 
   <!-- Cart Sidebar -->
   <div class="cart-overlay" aria-hidden="true"></div>
